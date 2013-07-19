@@ -93,7 +93,7 @@ static int stream_formatter(FILE *pipe, void *data, metric_type type, char *name
             break;
 
         case COUNTER:
-            STREAM("counts.%s|%f|%lld\n", name, counter_sum(value));
+            STREAM("%s|%f|%lld\n", name, (counter_sum(value) / GLOBAL_CONFIG->flush_interval));
             break;
 
         case SET:

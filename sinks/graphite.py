@@ -7,7 +7,7 @@ import logging
 
 
 class GraphiteStore(object):
-    def __init__(self, host="localhost", port=2003, prefix="statsite", attempts=3):
+    def __init__(self, host="localhost", port=2003, prefix="stats", attempts=3):
         """
         Implements an interface that allows metrics to be persisted to Graphite.
         Raises a :class:`ValueError` on bad arguments.
