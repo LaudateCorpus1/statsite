@@ -110,6 +110,7 @@ static int stream_formatter(FILE *pipe, void *data, metric_type type, char *name
             STREAM("timers.%s.count|%lld|%lld\n", name, timer_count(&t->tm));
             STREAM("timers.%s.stdev|%f|%lld\n", name, timer_stddev(&t->tm));
             STREAM("timers.%s.median|%f|%lld\n", name, timer_query(&t->tm, 0.5));
+            STREAM("timers.%s.mean_90|%f|%lld\n", name, timer_query(&t->tm, 0.90));
             STREAM("timers.%s.p95|%f|%lld\n", name, timer_query(&t->tm, 0.95));
             STREAM("timers.%s.p99|%f|%lld\n", name, timer_query(&t->tm, 0.99));
 
